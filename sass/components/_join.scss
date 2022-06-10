@@ -1,0 +1,59 @@
+.join-block {
+    margin-bottom: 60px;
+    
+    @include tablet {
+        margin-bottom: 0;
+    }
+
+    @include desktop {
+        padding-top: 12px;
+    }
+}
+
+.join-block__title {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+        
+    color: $secondary-color;
+    
+    @include tablet {
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    @include desktop {
+        text-align: left;
+        padding: 0;
+    }
+}
+
+.join-block__list {
+    display: flex;
+    justify-content: center;
+}
+
+
+.join-block__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.join-block__link {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    fill: $secondary-color;
+
+    transition: background-color $transition-type;
+
+    &:hover, &:focus {
+        background-color: $accent-color;
+    }
+}

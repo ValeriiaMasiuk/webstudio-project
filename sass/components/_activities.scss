@@ -1,0 +1,51 @@
+.activity {
+    display: none;
+    
+    @include desktop {
+        display: block;
+        padding-bottom: 94px;
+    }  
+}
+
+.activity__title {
+    @include desktop {
+        line-height: 1.17;
+        margin-bottom: 50px;
+    }
+}
+
+.activity__list {
+    @include desktop {
+        display: flex;
+    }
+}
+
+.activity__item {
+    @include desktop {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+}
+
+.activity__type {
+    @include desktop {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+
+        display: inline-block;
+        font-weight: 700;
+        line-height: 1.14;
+        text-align: center;
+        text-transform: uppercase;
+
+        color: $secondary-color;
+        height: 70px;
+        background-color: rgba(47, 48, 58, 0.8);
+        padding-top: 27px;
+    }
+}

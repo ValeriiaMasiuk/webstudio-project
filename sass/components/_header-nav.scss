@@ -1,0 +1,268 @@
+.menu-button {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+
+    &:hover .menu__icon, &:focus .menu__icon {
+        fill: $accent-color;
+    }
+
+    &:hover .menu__icon-close, &:focus .menu__icon-close {
+        fill: $accent-color;
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.menu-button .menu__icon-close {
+    display: none;
+}
+
+.menu-button.is-open .menu__icon-close {
+    display: block;
+}
+
+.menu-button.is-open .menu__icon {
+    display: none;
+}
+
+.menu-list {
+    display: none;
+
+    &.is-open {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $secondary-color;
+        z-index: 1;
+        height: 100vh;
+        padding-left: 40px;
+    }
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-around;
+    
+    @include tablet {
+    flex-direction: row;
+        margin-right: 84px;
+    }
+
+    @include desktop {
+        margin-right: 305px;
+
+        &__item:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+}
+
+.address-box {
+    @media screen and (max-width: 767px) {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+.header__address-nav {
+    @include desktop {
+        margin-left: auto;
+    }
+}
+
+.address-nav {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column-reverse;
+        height: 25%;
+        justify-content: space-between;
+    }
+    
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        flex-direction: column;
+
+        &__item:nth-child(1) {
+            margin-bottom: 10px;
+        }
+    }
+
+    @include desktop {
+        flex-direction: row;
+    }
+}
+
+.address-nav__item:not(:last-child) {
+    @include desktop {
+        margin-right: 30px;
+    }
+}
+
+.address-nav__link {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+
+        color: $text-color;
+
+        transition: color $transition-type;
+
+        &:hover,
+        &:focus {
+            color: $accent-color;
+            fill: $accent-color;
+        }
+    }
+
+    @include desktop {
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        font-size: 14px;
+        line-height: 1.14;
+    }
+}
+
+.telephone {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    
+    &__link {
+        color: $accent-color;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 767px)  {
+        font-size: 34px;
+    }
+
+    @include tablet {
+        margin-bottom: 0;
+
+        &__link {
+            color: $text-color
+        }
+    }
+}
+
+.email-address {
+    @media screen and (max-width: 767px) {
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+
+        &__link {        
+            color: $text-color;
+        }
+    }
+
+    @include tablet {
+        margin-bottom: 0;
+    }
+}
+
+.menu__item {
+    @include tablet {
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+}
+
+.menu__link {
+    font-weight: 500;
+    font-size: 40px;
+    letter-spacing: 0.02em;
+        
+    color: $main-text-color;
+
+    transition: color $transition-type;
+
+        &:hover,
+        &:focus {
+            color: $accent-color;
+        }
+
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        font-size: 14px;
+        line-height: 1.14;
+    }
+}
+
+.social{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 25%;
+    max-width: 356px;
+
+    &__item {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.22;            
+        letter-spacing: 0.02em;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        color: $accent-color;
+    }
+
+    @media screen and (max-width: 388px) {
+        flex-wrap: wrap;
+
+        &__item:last-child {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+}
+
+.address-nav__icon {
+    display: none;
+    
+
+    @include tablet {
+        display: inline-flex;
+        fill: currentColor;
+        margin-right: 8px;
+    }
+
+    @include desktop {
+        margin-right: 10px;
+    }
+}

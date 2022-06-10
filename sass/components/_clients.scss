@@ -1,0 +1,94 @@
+.clients__title {
+    @extend %title-default;
+    margin-bottom: 30px;
+
+    @include desktop {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+}
+
+.clients__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include desktop {
+        flex-wrap: nowrap;
+    }
+}
+
+.clients__item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    @include mobile-only {
+        flex-basis: calc((100% - 30px) / 2);
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+
+        &:nth-child(n+5) {
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 767px) {
+        margin-right: 16px;
+        margin-bottom: 16px;
+        flex-basis: calc((100% - 16px*2) / 3);
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &:nth-child(n+4) {
+            margin-bottom: 0;
+        }
+    }
+
+    @include tablet {
+        display: inline-flex;
+        flex-basis: calc((100% - 60px) / 3);
+
+        &:nth-child(n+4) {
+            margin-bottom: 0;
+        }
+    }
+
+
+    @media (min-width: 768px) and (max-width: 1199px) {    
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+
+    @include desktop {
+        margin-bottom: 0;
+        flex-basis: calc((100% - 5*30px) / 6);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.clients__link {
+    display: inline-flex;
+    width: 100%;    
+    height: 92px;
+    align-items: center;
+    justify-content: center;
+
+    border: $main-border $social-link-icon-color;
+    border-radius: 4px;
+    fill: $social-link-icon-color;
+
+    transition: fill $transition-type,
+                border $transition-type;
+
+    &:hover, &:focus {
+        fill: $accent-color;
+        border: $main-border $accent-color;
+    }
+}

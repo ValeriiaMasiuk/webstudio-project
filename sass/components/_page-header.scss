@@ -1,0 +1,11 @@
+.header {
+    position: relative;
+    width: 100%;
+    border-bottom: $main-border $header-border-color;
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
